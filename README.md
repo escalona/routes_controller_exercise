@@ -197,18 +197,24 @@ There is a lot of information in a tiny package. When things go wrong in your ap
 Visit this url: [localhost:3000/users](http://localhost:3000/users) and then find the log entry. Then open up the readme.md you copied onto your local machine and fill out this information:
 
 
-HTTP verb used in this request:
-URL:
-Controller Name:
-Controller Action:
-View File Name:
-Layout File Name:
-Response code of the request:
+HTTP verb used in this request: GET
+URL: /users
+Controller Name: Users
+Controller Action: index
+View File Name: users/index.html.erb
+Layout File Name: layouts/application
+Response code of the request: 200
 
 You should also notice a new line or two that we didn't see before, what is it (copy and paste, hint: after User Load) ?
 
+User Load (233.0ms)  SELECT "users".* FROM "users"
+  EXPLAIN (29.4ms)  EXPLAIN QUERY PLAN SELECT "users".* FROM "users"
+EXPLAIN for: SELECT "users".* FROM "users"
+0|0|0|SCAN TABLE users (~1000000 rows)
+
 Why do you think this line is there?
 
+It's the SQL statement that gets all the users from the Users table and displays them on the index page.
 
 
 Save and commit your answers.
