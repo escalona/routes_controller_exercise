@@ -1,4 +1,4 @@
-<% products = Product.all %>
+<% products = Product.includes(:user).all %>
 <h1>Products</h1>
 <h3>Total Products = <%= products.count %></h3>
 <table class="table table-striped">
